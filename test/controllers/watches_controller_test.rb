@@ -10,5 +10,4 @@ class WatchesControllerTest < ActionDispatch::IntegrationTest
     get watches_create_url
     assert_response :success
   end
-
 end

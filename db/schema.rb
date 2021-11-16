@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_16_103118) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo_url"
     t.index ["user_id"], name: "index_watches_on_user_id"
   end
 

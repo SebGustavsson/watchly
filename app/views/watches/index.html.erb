@@ -1,0 +1,14 @@
+<div class="cards">
+  <% @watches.each do |watch| %>
+    <div class="card-trip">
+      <img src="<%= watch.photo_url %>" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= watch.brand %></h2>
+            <p><em><%= watch.model %></em></p>
+          </div>
+        <h2 class="card-trip-pricing"><%= watch.year %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
