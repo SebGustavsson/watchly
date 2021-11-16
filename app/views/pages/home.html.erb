@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id='slides' class='carousel slide' data-ride='carousel'>
+  <ul class='carousel-indicators'>
+    <li data-target='slides' data-slide-to='0' class='active'></li>
+    <li data-target='slides' data-slide-to='1'></li>
+    <li data-target='slides' data-slide-to='2'></li>
+  </ul>
+  <div class='carousel-inner'>
+    <div class='carousel-item active'>
+      <%= image_tag 'festina-watch.png' %>
+      <div class='carousel-caption'>
+        <% if user_signed_in? %>
+        <h1 class='display-2'>Watchly</h1>
+        <h3>Review our fine collection of luxury watches for every style!</h3>
+        <% else %>
+        <h1 class='display-2'>Watchly</h1>
+        <h3>Luxury watches for every style!</h3>
+        <button type='button' class='btn btn-outline-light btn-lg'>Sign Up<button>
+        <% end %>
+      </div>
+    </div>
+    <div class='carousel-item'>
+      <%= image_tag 'rolex-watch.png', class: "carousel-img" %>
+    </div>
+    <div class='carousel-item' >
+      <%= image_tag 'citizen-watch.png', class: "carousel-img" %>
+    </div>
+  </div>
+</div>
+

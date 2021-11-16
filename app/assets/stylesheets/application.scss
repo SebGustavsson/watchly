@@ -12,6 +12,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
+}
+
 @import "components/card-trip";
 @import "components/cards";
 @import "components/body";
