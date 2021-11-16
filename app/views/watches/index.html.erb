@@ -3,7 +3,7 @@
   <%  @watches.each do |watch| %>
   <%= link_to watch_path(watch) do %>
     <div class="card-trip">
-      <img src="<%= watch.photo_url %>" />
+      <%= cl_image_tag watch.photos.first.key %>
         <div class="card-trip-infos">
           <div>
             <h2><%= watch.brand %></h2>
