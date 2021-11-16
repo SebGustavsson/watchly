@@ -1,7 +1,9 @@
 <div class="cards">
   <% @watch.each do |watch| %>
     <div class="card-trip">
-      <%= cl_image_tag watch.photos.first.key %>
+      <% if watch.photos.attached? %>
+      <%= cl_image_tag watch.photos.last.key %>
+      <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= watch.brand %></h2>
