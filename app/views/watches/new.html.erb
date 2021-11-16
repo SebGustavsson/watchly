@@ -1,4 +1,4 @@
-<%= simple_form_for [@list, @watch] do |f| %>
+<%= simple_form_for @watch do |f| %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit 'Add a watch', class: 'btn btn-flat' %>
   <%= f.input :model %>
