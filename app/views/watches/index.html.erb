@@ -1,5 +1,7 @@
-<div class="cards">
-  <% @watches.each do |watch| %>
+ <div class="container">
+  <div class="cards">
+  <%  @watches.each do |watch| %>
+  <%= link_to watch_path(watch) do %>
     <div class="card-trip">
       <img src="<%= watch.photo_url %>" />
         <div class="card-trip-infos">
@@ -11,4 +13,6 @@
       </div>
     </div>
   <% end %>
+  <% end %>
+</div>
 </div>
