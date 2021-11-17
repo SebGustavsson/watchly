@@ -2,6 +2,14 @@ class WatchesController < ApplicationController
 
   def index
     @watches = Watch.all
+
+    @markers = @watches.geocoded.map do |watch|
+      {
+        lat: watch.latitude,
+        lng: watch.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { watch: watch })
+      }
+    end
   end
 
   def show
