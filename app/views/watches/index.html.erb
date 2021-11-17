@@ -4,18 +4,6 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="cards">
-<<<<<<< HEAD
-  <%  @watches.each do |watch| %>
-    <div class="card-trip">
-  <%= link_to watch_path(watch) do %>
-        <div class="card-trip-infos">
-          <div>
-      <% if watch.photos.attached? %>
-      <%= cl_image_tag watch.photos.last.key %>
-      <% end %>
-            <h2><%= watch.brand %></h2>
-            <p><em><%= watch.model %></em></p>
-=======
     <%  @watches.each do |watch| %>
       <%= link_to watch_path(watch) do %>
         <div class="card-trip">
@@ -28,7 +16,6 @@
               <p><em><%= watch.model %></em></p>
             </div>
             <h2 class="card-trip-pricing"><%= watch.year %></h2>
->>>>>>> 604ff40c8000e868f912b356524a09dacb87d576
           </div>
         </div>
       <% end %>
