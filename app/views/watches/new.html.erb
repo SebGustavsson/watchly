@@ -1,8 +1,15 @@
-<%= simple_form_for @watch do |f| %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit 'Add a watch', class: 'btn btn-flat' %>
-  <%= f.input :model %>
-  <%= f.input :year %>
-  <%= f.input :brand %>
-
-<% end %>
+<div class='row justify-content-center'>
+  <div class='simple-form-container col-4' >
+    <%= simple_form_for @watch do |f| %>
+      <%= f.input :brand %>
+      <%= f.input :model %>
+      <%= f.input :year %>
+      <%= f.input :description %>
+      <%#= f.input :address %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <div class='row justify-content-center'>
+        <%= f.submit 'Add a watch', class: 'btn btn-watchly' %>
+      </div>
+    <% end %>
+  </div>
+</div>
