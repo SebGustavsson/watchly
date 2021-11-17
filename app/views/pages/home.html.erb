@@ -1,52 +1,50 @@
-<div> 
-  </div><div id='slides' class='carousel slide' data-ride='carousel'>
-    <ul class='carousel-indicators'>
-      <li data-target='slides' data-slide-to='0' class='active'></li>
-      <li data-target='slides' data-slide-to='1'></li>
-      <li data-target='slides' data-slide-to='2'></li>
-    </ul>
-    <div class='carousel-inner'>
-      <div class='carousel-item active'>
-        <%= image_tag 'festina-watch.png' %>
-        <div class='carousel-caption'>
-          <% if user_signed_in? %>
+<div id='slides' class='carousel slide' data-ride='carousel'>
+  <ul class='carousel-indicators'>
+    <li data-target='slides' data-slide-to='0' class='active'></li>
+    <li data-target='slides' data-slide-to='1'></li>
+    <li data-target='slides' data-slide-to='2'></li>
+  </ul>
+  <div class='carousel-inner'>
+    <div class='carousel-item active'>
+      <%= image_tag 'festina-watch.png' %>
+      <div class='carousel-caption'>
+        <% if user_signed_in? %>
           <h1 class='display-2'>Watchly</h1>
           <h3>Review our fine collection of luxury watches for every style!</h3>
-          <% else %>
+        <% else %>
           <h1 class='display-2'>Watchly</h1>
           <h3>Luxury watches for every style!</h3>
           <button type='button' class='btn btn-outline-light btn-lg'>Sign Up<button>
-          <% end %>
-        </div>
-      </div>
-      <div class='carousel-item'>
-        <%= image_tag 'breitling.png', class: "carousel-img" %>
-      </div>
-      <div class='carousel-item' >
-        <%= image_tag 'roger-dubois.png', class: "carousel-img" %>
-      </div>
-    </div>
-  </div>
-  <div class='last-three mt-4'>
-    <div class="container">
-      <div class="cards">
-      <%  @watches.last(3).each do |watch| %>
-      <%= link_to watch_path(watch) do %>
-        <div class="card-trip">
-          <% if watch.photos.attached? %>
-          <%= cl_image_tag watch.photos.last.key %>
-          <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= watch.brand %></h2>
-                <p><em><%= watch.model %></em></p>
-              </div>
-            <h2 class="card-trip-pricing"><%= watch.year %></h2>
+            <% end %>
           </div>
         </div>
-      <% end %>
-      <% end %>
+        <div class='carousel-item'>
+          <%= image_tag 'breitling.png', class: "carousel-img" %>
+        </div>
+        <div class='carousel-item' >
+          <%= image_tag 'roger-dubois.png', class: "carousel-img" %>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+    <div class='last-three mt-4'>
+      <div class="container">
+        <div class="cards">
+          <%  @watches.last(3).each do |watch| %>
+            <%= link_to watch_path(watch) do %>
+              <div class="card-trip">
+                <% if watch.photos.attached? %>
+                  <%= cl_image_tag watch.photos.last.key %>
+                <% end %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= watch.brand %></h2>
+                    <p><em><%= watch.model %></em></p>
+                  </div>
+                  <h2 class="card-trip-pricing"><%= watch.year %></h2>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
