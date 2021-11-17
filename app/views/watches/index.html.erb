@@ -1,20 +1,24 @@
- <div class="container">
+<div class="container">
+  <div id="map"
+     style="width: 100%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="cards">
-  <%  @watches.each do |watch| %>
-  <%= link_to watch_path(watch) do %>
-    <div class="card-trip">
-      <% if watch.photos.attached? %>
-      <%= cl_image_tag watch.photos.last.key %>
-      <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= watch.brand %></h2>
-            <p><em><%= watch.model %></em></p>
+    <%  @watches.each do |watch| %>
+      <%= link_to watch_path(watch) do %>
+        <div class="card-trip">
+          <% if watch.photos.attached? %>
+            <%= cl_image_tag watch.photos.last.key %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= watch.brand %></h2>
+              <p><em><%= watch.model %></em></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= watch.year %></h2>
           </div>
-        <h2 class="card-trip-pricing"><%= watch.year %></h2>
-      </div>
-    </div>
-  <% end %>
-  <% end %>
-</div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
