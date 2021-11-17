@@ -1,21 +1,20 @@
- <div class="container">
+<div class="container">
   <div class="cards">
-  <%  @watches.each do |watch| %>
-    <div class="card-trip">
-  <%= link_to watch_path(watch) do %>
-      <% if watch.photos.attached? %>
-      <%= cl_image_tag watch.photos.last.key %>
-      <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= watch.brand %></h2>
-            <p><em><%= watch.model %></em></p>
+    <%  @watches.each do |watch| %>
+      <%= link_to watch_path(watch) do %>
+        <div class="card-trip">
+          <% if watch.photos.attached? %>
+            <%= cl_image_tag watch.photos.last.key %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= watch.brand %></h2>
+              <p><em><%= watch.model %></em></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= watch.year %></h2>
           </div>
-        <h2 class="card-trip-pricing"><%= watch.year %></h2>
-      </div>
-        <% end %>
-    </div>
-
-  <% end %>
-</div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
