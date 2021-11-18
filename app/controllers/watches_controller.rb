@@ -23,6 +23,7 @@ class WatchesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @watch = Watch.find(params[:id])
   end
 
