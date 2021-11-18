@@ -38,49 +38,21 @@
 
 
 <div class="container mt-5">
-<div class="card-watch">
-  <% @watch.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 500, width: 500, crop: :fill %>
-    <% end %>
-  <div class="card-watch-infos">
-    <div>
-      <h3><%= @watch.brand %></h3>
-      <h5><%= @watch.model %></h5>
-      <h5><%= @watch.year %></h5>
-      <p>This is a very classic watch that suits all people and all occations</p>
-    </div>
-    <div><button type="button" class="btn btn-dark"><em>view price</em></button>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<div class="margin-top-3">
-<div class="card mb-3">
-    <% @watch.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
-    <% end %>
-  <div class="card-body">
-    <h3 class="card-title"><%= @watch.brand %></h3>
-    <h4 class="card-title"><%= @watch.model %></h4>
-    <h6 class="card-subtitle mb-2 text-muted"><%= @watch.year %></h6>
-    <p class="card-text">This is a very classic watch that suits all people and all occations.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    <button type="button" class="btn btn-dark"><em>view price</em></button>
-    <button type="button" class="btn btn-dark"><em>Reserve watch</em></button>
-  </div>
-</div>
-
-
-  <!--  <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h4 class="card-title"><%= @watch.brand %></h4>
-        <h5 class="card-title"><%= @watch.model %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= @watch.year %></h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <button type="button" class="btn btn-dark"><em>view price</em></button>
-      </div>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="d-flex">
+        <% @watch.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 350, width: 300, crop: :fill %>
+        <% end %>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h4 class="card-title"><%= @watch.brand %></h4>
+            <h5 class="card-title"><%= @watch.model %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= @watch.year %></h6>
+            <p class="card-text"><%= @watch.description %></p>
+            <button type="button" class="btn btn-success"><em>view price</em></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

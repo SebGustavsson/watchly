@@ -1,0 +1,11 @@
+<div class='row justify-content-center'>
+  <div class='col-4' >
+    <div class="booking-form">
+      <%= simple_form_for [@watch, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, class: 'btn-dark' %>
+      <% end %>
+    </div>
+  </div>
+</div>
