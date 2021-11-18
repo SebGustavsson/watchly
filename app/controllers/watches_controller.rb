@@ -1,6 +1,18 @@
 class WatchesController < ApplicationController
   def index
-    @watches = Watch.all
+    if params[:query].present?
+      sql_query = " \
+        watches.brand @@ :query \
+        OR watches.model @@ :query \
+        OR watches.address @@ :query \
+        OR watches.description @@ :query \
+      "
+      @watches = Watch.where(sql_query, query: "%#{params[:query]}%")
+   
+    else
+      @watches = Watch.all
+    end
+
     @markers = @watches.geocoded.map do |watch|
       {
         lat: watch.latitude,

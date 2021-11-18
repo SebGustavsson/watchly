@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_125324) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo_url"
+    t.text "description"
     t.string "address"
     t.float "latitude"
     t.float "longitude"

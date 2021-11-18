@@ -1,13 +1,10 @@
 .navbar-lewagon {
+    height: 90px;
     justify-content: space-between;
-    color: white;
-    background: #F4F4F4;
+    color: rgb(255, 255, 255);
+    background: #000000;
     // background-color: transparent;
     transition: 0.5s background-color ease;
-}
-
-.navbar-lewagon-white {
-    background-color: #F4F4F4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,5 +16,23 @@
 }
 
 .navbar-logo img {
+    height: 60px;
     border-radius: 50%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffe066;
+}
+
+.btn-search {
+    margin-left: 5px;
+}
+
+.search-field {
+    background-color: #000000;
+    color: #ffffff;
 }
