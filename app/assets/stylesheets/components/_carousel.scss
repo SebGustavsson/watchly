@@ -18,10 +18,25 @@ figure {
     margin: 0!important;
 }
 
+.festina {
+    background-image: url('festina-watch.png');
+    width: 100%;
+}
+
+.breitling {
+    background-image: url('breitling.png');
+    width: 100%;
+}
+
+.roger-dubois {
+    background-image: url('roger-dubois.png');
+    width: 100%;
+}
+
 .carousel-img {
-    height: 100vh;
-    width: 100vw;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
-    color: #eee;
-    text-align: center;
 }

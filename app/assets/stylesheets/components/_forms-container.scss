@@ -8,13 +8,21 @@
 }
 
 .btn-watchly {
-    background-color: #753188;
+    background-color: #565656;
     color: #ffffff;
     border-radius: 8px;
 }
 
 .btn-watchly:hover {
-    background-color: #753188;
     color: #FFE066;
-    border-radius: 8px;
+}
+
+.submit-button {
+    background-color: #565656;
+    color: #ffffff
+}
+
+.submit-button:hover {
+    background-color: #565656;
+    color: #FFE066;
 }
