@@ -1,5 +1,4 @@
 class WatchesController < ApplicationController
-
   def index
     if params[:query].present?
       sql_query = " \
@@ -13,6 +12,7 @@ class WatchesController < ApplicationController
     else
       @watches = Watch.all
     end
+
     @markers = @watches.geocoded.map do |watch|
       {
         lat: watch.latitude,
@@ -34,13 +34,13 @@ class WatchesController < ApplicationController
     @watch = Watch.new(watch_params)
     @watch.user = current_user
     if @watch.save
-    redirect_to watch_path(@watch)
+      redirect_to watch_path(@watch)
     else
       render :new
     end
   end
 
   def watch_params
-  params.require(:watch).permit(:model, :year, :brand, :description, :address, photos: [])
+    params.require(:watch).permit(:model, :year, :brand, :description, :address, photos: [])
   end
 end
