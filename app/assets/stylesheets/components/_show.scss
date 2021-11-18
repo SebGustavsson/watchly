@@ -1,35 +1,36 @@
+.booking-form{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
 .card-box {
-  margin: auto;
-  display: block;
-  width: 80%;
+  display: flex;
+  justify-content: center;
 }
 
-.card-trip {
+.card-trip-show {
+  background-size: cover;
+  min-width: 800px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
+.card-trip-show h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-trip-show p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.card-trip-show .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -42,4 +43,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-trip-show > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
 }
