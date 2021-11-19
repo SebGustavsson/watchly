@@ -23,8 +23,8 @@
             </div>
           <% end %>
           <div class='row justify-content-center'>
-            <%= link_to   %><button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-danger">Danger</button>
+            <%= link_to "Accept", accept_path(id:booking.id ), mathod: :patch, class: "btn-success dash-button mr-2" %>
+            <%= link_to "Reject", reject_path(id:booking.id ), method: :patch, class: "btn-danger dash-button ml-2"  %>
           </div>
         <% end %>
       </h1>
