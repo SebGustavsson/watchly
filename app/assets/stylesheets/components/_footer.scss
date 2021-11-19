@@ -34,14 +34,11 @@
     align-content: left;
 }
 
-.time-share {
-    background-image: url('TimeShare.png');
+.footer-logo {
+    align-items: center;
+    height: 60px;
 }
 
-.footer-logo {
-    height: 9px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+.company-name {
+    font-family: 'Sorts Mill Goudy', serif;
 }
