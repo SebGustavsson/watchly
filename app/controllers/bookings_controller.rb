@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.watch = @watch
     @booking.user = current_user
     if @booking.save
-      redirect_to watch_bookings_path(@booking), notice: "You have now booked the watch"
+      redirect_to bookings_path, notice: "You have now booked the watch"
     else
       render :new
     end
@@ -39,6 +39,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :watch_id)
+    params.require(:booking).permit(:user_id, :watch_id, :start_date, :end_date)
   end
 end

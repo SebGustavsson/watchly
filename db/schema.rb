@@ -71,10 +71,10 @@ ActiveRecord::Schema.define(version: 2021_11_19_105543) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo_url"
-    t.text "description"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.text "description"
     t.string "price"
     t.index ["user_id"], name: "index_watches_on_user_id"
   end

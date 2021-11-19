@@ -9,7 +9,6 @@
         <p><%= @watch.description %></p>
       </div>
       <h2 class="card-trip-pricing">€<%= @watch.price %></h2>
-
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
     <%= simple_form_for [@watch, @booking] do |f| %>
@@ -19,6 +18,5 @@
       </div>
       <%= f.button :submit, class: 'btn-dark booking-btn w-100' %>
     <% end %>
-    <% raise %>
   </div>
 </div>
