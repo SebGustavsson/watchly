@@ -1,0 +1,51 @@
+<% @host = current_user.watches.any?
+   @rentings = current_user.bookings
+      if @host
+        @my_watches = current_user.watches
+        @my_bookings = Booking.where(watch_id: @my_watches.pluck(:id))
+      end
+%>
+<div class='dashboard-container'>
+  <div class='row justify-content-center'>
+    <div class="bookings">
+      <h1 ml-5>My bookings:
+        <%  @my_bookings.each do |booking| %>
+          <%= link_to watch_path(booking.watch) do %>
+            <div class="card-trip mt-1 mb-2">
+              <%= cl_image_tag booking.watch.photos.last.key %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= booking.watch.brand %></h2>
+                  <p><em><%= booking.watch.model %></em></p>
+                </div>
+                <h2 class="card-trip-pricing"><%= booking.watch.year %></h2>
+              </div>
+            </div>
+          <% end %>
+          <div class='row justify-content-center'>
+            <button type="button" class="btn btn-success">Accept</button>
+            <button type="button" class="btn btn-danger">Decline</button>
+          </div>
+        <% end %>
+      </h1>
+    </div>
+    <div class="watches">
+      <h1>My watches:
+        <%  @my_watches.each do |watch| %>
+          <%= link_to watch_path(watch) do %>
+            <div class="card-trip mt-2 mb-5">
+              <%= cl_image_tag watch.photos.last.key %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= watch.brand %></h2>
+                  <p><em><%= watch.model %></em></p>
+                </div>
+                <h2 class="card-trip-pricing"><%= watch.year %></h2>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </h1>
+    </div>
+  </div>
+</div>
