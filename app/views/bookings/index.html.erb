@@ -17,14 +17,15 @@
                 <div>
                   <h2><%= booking.watch.brand %></h2>
                   <p><em><%= booking.watch.model %></em></p>
+                  <p><em><%= booking.status %></em></p>
                 </div>
                 <h2 class="card-trip-pricing"><%= booking.watch.year %></h2>
               </div>
             </div>
           <% end %>
           <div class='row justify-content-center'>
-            <button type="button" class="btn btn-success">Accept</button>
-            <button type="button" class="btn btn-danger">Decline</button>
+            <%= link_to "Accept", accept_path(id:booking.id ), method: :patch, class: "btn-success dash-button mr-4" %>
+            <%= link_to "Reject", reject_path(id:booking.id ), method: :patch, class: "btn-danger dash-button ml-4"  %>
           </div>
         <% end %>
       </h1>
