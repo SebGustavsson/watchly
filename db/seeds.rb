@@ -12,19 +12,26 @@ Watch.destroy_all
 User.destroy_all
 john = User.new(email: "john@watchly.se", password: "password")
 john.save
+jens = User.new(email: "jens@watchly.se", password: "password")
+jens.save
 
 puts "created user"
 
 file1 = URI.open('https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80')
-rolex_datejust = Watch.new(price: "45", address: "Drottningholm Stockholm", brand: 'Rolex', model: "Datejust", year: 2013, user_id: john.id, description: "Rolex presents four white Rolesor versions (combining Oystersteel and white gold) of the Oyster Perpetual Datejust 31. The first watch, featuring a bezel set with 46 brilliant-cut diamonds.")
+rolex_datejust = Watch.new(price: "45", address: "Drottningholm Stockholm", brand: 'Rolex', model: "Datejust", year: 2013, user_id: jens.id, description: "Rolex presents four white Rolesor versions (combining Oystersteel and white gold) of the Oyster Perpetual Datejust 31. The first watch, featuring a bezel set with 46 brilliant-cut diamonds.")
 rolex_datejust.photos.attach(io: file1, filename: 'datejust.png', content_type: 'image/png')
 rolex_datejust.save
+booking1 = Booking.new(start_date: Time.now, end_date: Time.now, watch_id: rolex_datejust.id, user_id: john.id)
+booking1.save
 puts "created watch 1"
 
 file2 = URI.open('https://images.unsplash.com/photo-1594534475808-b18fc33b045e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80')
 rolex_submariner = Watch.new(price: "55", address: "Ringvägen 20 Stockholm", brand: 'Rolex', model: "Submariner", year: 2015, user_id: john.id, description: "The Oyster Perpetual Submariner in Oystersteel with a Cerachrom bezel insert in black ceramic and a black dial with large luminescent hour markers.")
 rolex_submariner.photos.attach(io: file2, filename: 'submariner.png', content_type: 'image/png')
 rolex_submariner.save
+booking2 = Booking.new(start_date: Time.now, end_date: Time.now, watch_id: rolex_datejust.id, user_id: john.id)
+booking2.save
+
 puts "created watch 2"
 
 file3 = URI.open('https://images.unsplash.com/photo-1627860284764-c92502f39afb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2835&q=80')
