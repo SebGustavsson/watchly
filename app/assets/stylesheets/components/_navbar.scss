@@ -16,8 +16,7 @@
 }
 
 .navbar-logo img {
-    height: 60px;
-    border-radius: 50%;
+    width: 60px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -35,4 +34,8 @@
 .search-field {
     background-color: #000000;
     color: #ffffff;
+}
+
+.form-inline .form-control {
+    width: 800px;
 }

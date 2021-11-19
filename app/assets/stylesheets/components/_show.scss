@@ -1,52 +1,63 @@
-.booking-form{
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
+.booking-form {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
 }
+
+.booking-btn {
+    color: #ffffff;
+}
+
+.booking-btn:hover {
+    color: #FFE066;
+}
+
 .card-box {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .card-trip-show {
-  background-size: cover;
-  min-width: 800px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-size: cover;
+    margin-top: 40px;
+    min-width: 800px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
 .card-trip-show h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .card-trip-show p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
+    font-size: 16px;
+    opacity: 1;
+    margin: 0;
+    margin-right: 300px;
 }
 
-
 .card-trip-show .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
 }
 
 .card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
 }
 
-.card-trip-show > img {
-  height: 400px;
-  width: 100%;
-  object-fit: cover;
+.card-trip-show>img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
 }
