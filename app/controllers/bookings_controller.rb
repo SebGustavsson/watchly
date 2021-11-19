@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @watch = Watch.find(params[:watch_id])
     @booking = Booking.new
@@ -11,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.watch = @watch
     @booking.user = current_user
     if @booking.save
-      redirect_to watch_path(@watch), notice: "You have now booked the watch"
+      redirect_to watch_bookings_path(@booking), notice: "You have now booked the watch"
     else
       render :new
     end
