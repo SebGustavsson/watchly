@@ -8,10 +8,10 @@
 <div class='dashboard-container'>
   <div class='row justify-content-center'>
     <div class="bookings">
-      <h1>My bookings:
+      <h1 ml-5>My bookings:
         <%  @my_bookings.each do |booking| %>
           <%= link_to watch_path(booking.watch) do %>
-            <div class="card-trip">
+            <div class="card-trip mt-1 mb-2">
               <%= cl_image_tag booking.watch.photos.last.key %>
               <div class="card-trip-infos">
                 <div>
@@ -22,6 +22,10 @@
               </div>
             </div>
           <% end %>
+          <div class='row justify-content-center'>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+          </div>
         <% end %>
       </h1>
     </div>
@@ -29,7 +33,7 @@
       <h1>My watches:
         <%  @my_watches.each do |watch| %>
           <%= link_to watch_path(watch) do %>
-            <div class="card-trip">
+            <div class="card-trip mt-2 mb-5">
               <%= cl_image_tag watch.photos.last.key %>
               <div class="card-trip-infos">
                 <div>
