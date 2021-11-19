@@ -1,17 +1,25 @@
-<div class='container mt-5'>
-<div class='row justify-content-center'>
-  <div class='simple-form-container col-4' >
-    <%= simple_form_for @watch do |f| %>
-      <%= f.input :brand %>
-      <%= f.input :model %>
-      <%= f.input :year %>
-      <%= f.input :description %>
-      <%= f.input :address %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <div class='row justify-content-center'>
-        <%= f.submit 'Add a watch', class: 'btn btn-watchly' %>
+<div class="special-container">
+  <div class="form-height">
+    <div class="form-img">
+      <div>
+      <div class="form-text">
+         <h4><em>More than just a watch</em></h4>
+        <p>Be in time with style</p>
+        </div>
       </div>
-    <% end %>
+    </div>
+    <div class="form-container">
+      <%= simple_form_for @watch do |f| %>
+        <%= f.input :brand %>
+        <%= f.input :model %>
+        <%= f.input :year %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <div class='row justify-content-center'>
+          <%= f.submit 'Add a watch', class: 'btn btn-watchly w-100' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>
