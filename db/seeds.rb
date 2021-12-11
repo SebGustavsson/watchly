@@ -10,7 +10,7 @@ require "open-uri"
 Booking.destroy_all
 Watch.destroy_all
 User.destroy_all
-john = User.new(email: "john@watchly.se", password: "password")
+john = User.new(email: "  john@watchly.se", password: "password")
 john.save
 jens = User.new(email: "jens@watchly.se", password: "password")
 jens.save
